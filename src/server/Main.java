@@ -1,5 +1,7 @@
 package ChatMe.server
 
+import ChatMe.server.ChatMeServer
+
 public class Main {
 
 	public static void main(String[] args) {
