@@ -1,6 +1,11 @@
 package ChatMe.server
 
-public class MeChatServer {
+public class ChatMeServer {
 
+	private int portNum;
+
+	public ChatMeServer(int portNum) {
+		this.portNum = portNum;
+	}
 
 }
