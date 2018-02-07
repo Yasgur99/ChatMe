@@ -1,1 +1,1 @@
-package ChatMe.client
+package ChatMe.client;

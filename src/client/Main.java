@@ -1,3 +1,3 @@
-package ChatMe.client
+package ChatMe.client;
 
-import ChatMe.client.ChatMeClient
+import ChatMe.client.ChatMeClient;

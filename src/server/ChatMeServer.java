@@ -1,4 +1,4 @@
-package ChatMe.server
+package ChatMe.server;
 
 public class ChatMeServer {
 
@@ -6,6 +6,11 @@ public class ChatMeServer {
 
 	public ChatMeServer(int portNum) {
 		this.portNum = portNum;
+	}
+
+	public void start() {
+		// do something
+
 	}
 
 }
