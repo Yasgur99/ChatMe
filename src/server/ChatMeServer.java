@@ -7,7 +7,7 @@ public class ChatMeServer {
 
 	private int portNum;
 	private ServerSocket serverSocket;
-	private ClientHandler clientHandler
+	private ClientHandler clientHandler;
 
 	public ChatMeServer(int portNum) {
 		this.portNum = portNum;
@@ -15,14 +15,15 @@ public class ChatMeServer {
 
 	public void start() {
 		// start client handler
-		clientHandler = new ClientHandler();
+		this.clientHandler = new ClientHandler();
 		clientHandler.start;
 
 		// handle incoming clients
 		serverSocket = new ServerSocket(portNum);
 		for(;;) {
 			Socket newClientSocket = serverSocket.accept();
-			Thread clientThread = new ClientThread(newClientSocket) {
+			Callable newClientThread =
+				new ClientThread(newClientSocket) implements Callable {
 
 				private Socket socket;
 
@@ -31,12 +32,15 @@ public class ChatMeServer {
 				}
 
 				@Override
-				public void Run
-
-
+				public call() {
+					for(;;;) {
+						// do client stuff
+					}
+				}
 			}
 
 			// execute it
+			clientHandler.execute(newClientThread);
 
 		} catch {
 			// stahp it
