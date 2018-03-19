@@ -5,47 +5,48 @@ import java.net.ServerSocket;
 
 public class ChatMeServer {
 
-	private int portNum;
-	private ServerSocket serverSocket;
-	private ClientHandler clientHandler;
+    private int portNum;
+    private ServerSocket serverSocket;
+    private ClientHandler clientHandler;
 
-	public ChatMeServer(int portNum) {
-		this.portNum = portNum;
-	}
+    public ChatMeServer(int portNum) {
+        this.portNum = portNum;
+    }
 
-	public void start() {
-		// start client handler
-		this.clientHandler = new ClientHandler();
-		clientHandler.start;
+    public void start() {
+        // start client handler
+        this.clientHandler = new ClientHandler();
+        clientHandler.start;
 
-		// handle incoming clients
-		serverSocket = new ServerSocket(portNum);
-		for(;;) {
-			Socket newClientSocket = serverSocket.accept();
-			Callable newClientThread =
-				new ClientThread(newClientSocket) implements Callable {
+        // handle incoming clients
+        serverSocket = new ServerSocket(portNum);
+        for(;;) {
+            Socket newClientSocket = serverSocket.accept();
+            Callable newClientThread =
+                new ClientThread(newClientSocket) implements Callable {
 
-				private Socket socket;
+                    private Socket socket;
 
-				public ClientThread(Socket socket) {
-					this.socket = socket;
-				}
+                    public ClientThread(Socket socket) {
+                        this.socket = socket;
+                    }
 
-				@Override
-				public call() {
-					for(;;;) {
-						// do client stuff
-					}
-				}
-			}
+                    @Override
+                    public call() {
+                        for(;;;) {
+                            // do client stuff
+                        }
+                    }
+                }
+            }
 
-			// execute it
-			clientHandler.execute(newClientThread);
+            // execute it
+            clientHandler.execute(newClientThread);
 
-		} catch {
-			// stahp it
+        } catch {
+            // stahp it
 
-		}
-	}
+        }
+    }
 
 }
